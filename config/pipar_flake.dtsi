@@ -1,0 +1,40 @@
+/*
+ * Pipar Flake overlay - enables encoder and optional features
+ */
+
+// Enable encoder
+&encoder_1 {
+    status = "okay";
+};
+
+// Enable PWM for encoder (if needed)
+&pwm0 {
+    status = "okay";
+};
+
+// Optional: Enable OLED display if you have one
+&pro_micro_i2c {
+    status = "okay";
+
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        com-sequential;
+        inversion-on;
+        prechargep = <0x22>;
+    };
+};
+
+// Optional: Add sensors for encoder in keymap
+/ {
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&encoder_1>;
+    };
+};
