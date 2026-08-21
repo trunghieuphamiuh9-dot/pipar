@@ -13,6 +13,17 @@
 #define FUNC        1
 
 / {
+    chosen {
+        zmk,physical-layout = &physical_layout0;
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+        /* ... các layer của bạn ... */
+    };
+};
+
+/ {
   
   sensors: sensors {
     compatible = "zmk,keymap-sensors";
