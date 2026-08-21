@@ -3,6 +3,12 @@ if SHIELD_PIPAR_FLAKE
 config ZMK_KEYBOARD_NAME
     default "PiparFlake"
 
+config ZMK_STUDIO
+    default y
+
+config ZMK_STUDIO_LOCKING
+    default n
+
 if ZMK_DISPLAY
 
 config I2C
