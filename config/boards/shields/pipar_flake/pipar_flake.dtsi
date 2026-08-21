@@ -13,6 +13,7 @@
         zmk,matrix-transform = &default_transform;
         zmk,backlight = &backlight;
         zephyr,display = &oled;
+        /* BẮT BUỘC: Khai báo physical-layout được chọn */
         zmk,physical-layout = &physical_layout0;
     };
 
@@ -20,6 +21,8 @@
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
         transform = <&default_transform>;
+        
+        /* BẮT BUỘC: Khai báo danh sách keys ứng với ma trận 3x3 */
         keys
             = <&key_physical_attrs 100 100   0   0 0 0 0>
             , <&key_physical_attrs 100 100 100   0 0 0 0>
@@ -32,6 +35,7 @@
             , <&key_physical_attrs 100 100 200 200 0 0 0>
             ;
     };
+};
 
     encoder_1: encoder_1 {
         compatible = "alps,ec11";
